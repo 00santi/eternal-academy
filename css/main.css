@@ -1,0 +1,144 @@
+:root {
+    --bg: #f9f9f9;
+    --fg: #333;
+    --primary: #0066cc;
+    --card-bg: #fff;
+    --card-shadow: rgba(0,0,0,0.1);
+    --gap: 1.5rem;
+    --radius: 8px;
+    --font-body: Georgia, serif;
+    --font-sans: Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: var(--gap);
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--fg);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap);
+    align-items: start;
+}
+
+.lead {
+    margin-top: 0.5rem;
+}
+
+.infobox {
+    background: var(--card-bg);
+    padding: var(--gap);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px var(--card-shadow);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.infobox-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--gap);
+    border-radius: 4px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: var(--gap);
+}
+
+.toc a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
+
+main section {
+    margin-top: var(--gap);
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: calc(var(--gap) / 2);
+}
+
+details[open] summary {
+    color: var(--primary);
+}
+
+details ul {
+    list-style: disc inside;
+    margin: 0;
+    padding-left: var(--gap);
+}
+
+.mt {
+    margin-top: var(--gap);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.profile-header {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: var(--gap);
+    align-items: center;
+}
+
+.profile-header figure {
+    margin: 0;
+    text-align: center;
+}
+
+.profile-header figcaption {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.profile-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+}
+
+.profile-table th,
+.profile-table td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.profile-table th {
+    background: #f2f2f2;
+    width: 35%;
+}
+
+.profile-nav {
+    margin-top: var(--gap);
+    text-align: right;
+}
+
+.profile-nav a {
+    text-decoration: none;
+    color: var(--primary);
+}
