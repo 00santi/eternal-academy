@@ -157,3 +157,26 @@ a:hover {
     border-radius: var(--radius);
     display: block;
 }
+
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.video-grid iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+.video-frame {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16/9;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
