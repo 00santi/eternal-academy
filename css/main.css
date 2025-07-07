@@ -142,3 +142,18 @@ a:hover {
     text-decoration: none;
     color: var(--primary);
 }
+
+:root {
+    --avatar-size: 200px;
+}
+
+.profile-img,
+.infobox-image {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+
+    object-fit: cover;
+
+    border-radius: var(--radius);
+    display: block;
+}
