@@ -5,25 +5,6 @@
     <title>Eternal Academy</title>
     <link rel="stylesheet" href="css/main.css"/>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        function openByHash() {
-            const hash = window.location.hash.slice(1);
-            if (!hash) return;
-            document.querySelectorAll('details[open]').forEach(d => d.open = false);
-
-            const target = document.getElementById(hash);
-            if (target && target.tagName.toLowerCase() === 'details') {
-                target.open = true;
-                target.scrollIntoView({behavior: 'smooth', block: 'start'});
-            }
-        }
-
-        openByHash();
-
-        window.addEventListener('hashchange', openByHash);
-    });
-</script>
 <body>
 <header class="header">
     <div>
@@ -41,19 +22,9 @@
     </aside>
 </header>
 
-<nav class="toc">
-    <ul>
-        <li><a href="#active-members">Active Members</a></li>
-        <li><a href="#retired-members">Retired Members</a></li>
-        <li><a href="#lore">Lore</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#discord">Discord</a></li>
-    </ul>
-</nav>
-
 <main>
 
-    <details id="active-members" class="mt">
+    <details id="active-members" class="mt" open>
         <summary>Active Members</summary>
         <ul>
             <li><a href="members/asyashi.html">Asyashi</a></li>
@@ -72,7 +43,7 @@
             <li><a href="members/vyz.html">Vyz</a></li>
         </ul>
     </details>
-    <details id="retired-members" class="mt">
+    <details id="retired-members" class="mt" open>
         <summary>Retired Members</summary>
         <ul>
             <li>Ambatu</li>
@@ -86,13 +57,13 @@
     </details>
 
 
-    <details id="lore" class="mt">
+    <details id="lore" class="mt" open>
         <summary>Lore</summary>
         <p>Eternal Academy was founded by Nacht, Rogue, Santi, and Stonda. We came up with the idea and team name during
             a match against a skull merchant, while vcing on Knightlight's discord</p>
     </details>
 
-    <details id="videos" class="mt">
+    <details id="videos" class="mt" open>
         <summary>Gameplay Videos</summary>
         <div class="video-grid">
             <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/zrgTv2rfGIE"
@@ -115,7 +86,7 @@
     </details>
 
 
-    <details id="discord" class="mt">
+    <details id="discord" class="mt" open>
         <summary>Discord Link</summary>
         <h2>Discord invite</h2>
         <p>Coming soon, we are still tidying things up</p>
