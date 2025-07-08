@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Eternal Academy</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css"/>
 </head>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function openByHash() {
+            const hash = window.location.hash.slice(1);
+            if (!hash) return;
+            document.querySelectorAll('details[open]').forEach(d => d.open = false);
+
+            const target = document.getElementById(hash);
+            if (target && target.tagName.toLowerCase() === 'details') {
+                target.open = true;
+                target.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+        }
+
+        openByHash();
+
+        window.addEventListener('hashchange', openByHash);
+    });
+</script>
 <body>
 <header class="header">
     <div>
@@ -12,7 +31,7 @@
         <p class="lead">Eternal Academy is a competitive Dead by Daylight team formed in April 2023</p>
     </div>
     <aside class="infobox">
-        <img src="images/etr.png" alt="Eternal Academy Logo" class="infobox-image" />
+        <img src="images/etr.png" alt="Eternal Academy Logo" class="infobox-image"/>
         <div class="infobox-content">
             <p><strong>Name:</strong> Eternal Academy</p>
             <p><strong>Formed in:</strong> April 2023</p>
@@ -24,7 +43,8 @@
 
 <nav class="toc">
     <ul>
-        <li><a href="#members">Members</a></li>
+        <li><a href="#active-members">Active Members</a></li>
+        <li><a href="#retired-members">Retired Members</a></li>
         <li><a href="#lore">Lore</a></li>
         <li><a href="#videos">Videos</a></li>
         <li><a href="#discord">Discord</a></li>
@@ -32,55 +52,71 @@
 </nav>
 
 <main>
-    <section id="members">
-        <details class="mt">
-            <summary>Active Members</summary>
-            <ul>
-                <li><a href="members/asyashi.html">Asyashi</a></li>
-                <li><a href="members/benny.html">Benny</a></li>
-                <li><a href="members/bigt.html">Bigt</a></li>
-                <li><a href="members/elaine.html">Elaine</a></li>
-                <li><a href="members/enjoyer.html">Enjoyer</a></li>
-                <li><a href="members/espionage.html">Espionage</a></li>
-                <li><a href="members/nacht.html">Nacht</a></li>
-                <li><a href="members/pipette.html">Pipette</a></li>
-                <li><a href="members/radiiit.html">Radiiit</a></li>
-                <li><a href="members/raviel.html">Raviel</a></li>
-                <li><a href="members/rogue.html">Rogue</a></li>
-                <li><a href="members/santi.html">Santi</a></li>
-                <li><a href="members/stonda.html">Stonda</a></li>
-                <li><a href="members/vyz.html">Vyz</a></li>
-            </ul>
-        </details>
-        <details class="mt">
-            <summary>Retired Members</summary>
-            <ul>
-                <li>Ambatu</li>
-                <li>Groznovata</li>
-                <li>Mystic</li>
-                <li>Nissan</li>
-                <li><a href="members/roxas.html">Roxas</a></li>
-                <li>Warwarrior</li>
-                <li>Zenotix</li>
-            </ul>
-        </details>
-    </section>
 
-    <details id="lore" class="mt"> <summary>Lore</summary>
-        <p>Eternal Academy was founded by Nacht, Rogue, Santi, and Stonda. We came up with the idea and team name during a match against a skull merchant, while vcing on Knightlight's discord</p>
+    <details id="active-members" class="mt">
+        <summary>Active Members</summary>
+        <ul>
+            <li><a href="members/asyashi.html">Asyashi</a></li>
+            <li><a href="members/benny.html">Benny</a></li>
+            <li><a href="members/bigt.html">Bigt</a></li>
+            <li><a href="members/elaine.html">Elaine</a></li>
+            <li><a href="members/enjoyer.html">Enjoyer</a></li>
+            <li><a href="members/espionage.html">Espionage</a></li>
+            <li><a href="members/nacht.html">Nacht</a></li>
+            <li><a href="members/pipette.html">Pipette</a></li>
+            <li><a href="members/radiiit.html">Radiiit</a></li>
+            <li><a href="members/raviel.html">Raviel</a></li>
+            <li><a href="members/rogue.html">Rogue</a></li>
+            <li><a href="members/santi.html">Santi</a></li>
+            <li><a href="members/stonda.html">Stonda</a></li>
+            <li><a href="members/vyz.html">Vyz</a></li>
+        </ul>
+    </details>
+    <details id="retired-members" class="mt">
+        <summary>Retired Members</summary>
+        <ul>
+            <li>Ambatu</li>
+            <li>Groznovata</li>
+            <li>Mystic</li>
+            <li>Nissan</li>
+            <li><a href="members/roxas.html">Roxas</a></li>
+            <li>Warwarrior</li>
+            <li>Zenotix</li>
+        </ul>
     </details>
 
-    <details id="videos" class="mt"> <summary>Gameplay Videos</summary>
+
+    <details id="lore" class="mt">
+        <summary>Lore</summary>
+        <p>Eternal Academy was founded by Nacht, Rogue, Santi, and Stonda. We came up with the idea and team name during
+            a match against a skull merchant, while vcing on Knightlight's discord</p>
+    </details>
+
+    <details id="videos" class="mt">
+        <summary>Gameplay Videos</summary>
         <div class="video-grid">
-            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/zrgTv2rfGIE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/_ark1nK79I0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/xtE08TB-STk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/P7ofWgItT98" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/zrgTv2rfGIE"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/_ark1nK79I0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/xtE08TB-STk"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <iframe class="video-frame" width="560" height="315" src="https://www.youtube.com/embed/P7ofWgItT98"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
         </div>
     </details>
 
 
-    <details id="discord" class="mt"><summary>Discord Link</summary>
+    <details id="discord" class="mt">
+        <summary>Discord Link</summary>
         <h2>Discord invite</h2>
         <p>Coming soon, we are still tidying things up</p>
     </details>
