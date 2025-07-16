@@ -8,6 +8,31 @@
     --radius: 8px;
     --font-body: Georgia, serif;
     --font-sans: Arial, sans-serif;
+    --table-header-bg: #f2f2f2;
+    --table-border: #ddd;
+    --avatar-size: 200px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --fg: #e0e0e0;
+        --primary: #3399ff;
+        --card-bg: #1e1e1e;
+        --card-shadow: rgba(0,0,0,0.7);
+        --table-header-bg: #1f1f1f;
+        --table-border: #333;
+    }
+}
+
+.dark {
+    --bg: #121212;
+    --fg: #e0e0e0;
+    --primary: #3399ff;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0,0,0,0.7);
+    --table-header-bg: #1f1f1f;
+    --table-border: #333;
 }
 
 * {
@@ -43,10 +68,12 @@ body {
 }
 
 .infobox-image {
-    width: 100%;
-    height: auto;
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    object-fit: cover;
     margin-bottom: var(--gap);
-    border-radius: 4px;
+    border-radius: var(--radius);
+    display: block;
 }
 
 .toc ul {
@@ -97,6 +124,16 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.profile-card {
+    background: var(--card-bg);
+    box-shadow: 0 2px 5px var(--card-shadow);
+    border-radius: var(--radius);
+    padding: var(--gap);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .profile-header {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -124,13 +161,18 @@ a:hover {
 .profile-table th,
 .profile-table td {
     padding: 0.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--table-border);
     text-align: left;
 }
 
 .profile-table th {
-    background: #f2f2f2;
+    background: var(--table-header-bg);
     width: 35%;
+}
+
+.profile-list {
+    list-style: disc inside;
+    padding-left: var(--gap);
 }
 
 .profile-nav {
@@ -143,40 +185,23 @@ a:hover {
     color: var(--primary);
 }
 
-:root {
-    --avatar-size: 200px;
-}
-
-.profile-img,
-.infobox-image {
-    width: var(--avatar-size);
-    height: var(--avatar-size);
-
-    object-fit: cover;
-
-    border-radius: var(--radius);
-    display: block;
-}
-
 .video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
-.video-grid iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-}
 .video-frame {
     width: 100%;
     max-width: 600px;
     aspect-ratio: 16/9;
 }
 
-.video-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+.profile-img,
+.infobox-image {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    object-fit: cover;
+    border-radius: var(--radius);
+    display: block;
 }
